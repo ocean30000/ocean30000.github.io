@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--页眉-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/style.css">
+  
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">个人<span>空间</span></div>
+            <ul class="nav-links">
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./hobby.html">我的爱好</a></li>
+                <li><a href="./skills.html">技能介绍</a></li>
+                <li><a href="./contact.html">联系我</a></li>
+                <li class="welcome-text">Welcome to my space!</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner区域 -->
+    <div class="banner-container">
+        <!-- Banner幻灯片 -->
+        <div class="banner-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0)), url('./img/b1.jpg');">
+           
+        </div>
+        
+        <div class="banner-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('./img/b2.png');">
+           
+        </div>
+        
+        <div class="banner-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('./img/b3.png');">
+            
+        </div>
+        
+        <!-- 导航按钮 -->
+        <div class="banner-nav">
+            <div class="nav-btn prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-btn next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        
+        <!-- 指示点 -->
+        <div class="banner-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+
+
+
+      <!-- 内容区域 -->
+     <!-- 联系我内容区域 -->
+     <section class="content-section" id="contact" style="background-color: #f0f8ff;">
+        <div class="container">
+            <div class="profile-container">
+                <!-- 左侧联系信息 -->
+                <div class="contact-info">
+                    <h2 class="contact-title">📮 联系我</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3 class="item-label">邮箱</h3>
+                            <p class="item-content">2639682896@qq.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3 class="item-label">电话</h3>
+                            <p class="item-content">192-3271-7701</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3 class="item-label">地址</h3>
+                            <p class="item-content">中南财经政法大学</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3 class="item-label">GitHub</h3>
+                            <p class="item-content">github.com/ocean30000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧联系表单 -->
+                <div class="contact-form-wrapper">
+                    <div class="cute-form">
+                        <h2 class="form-title">✉️ 发送消息</h2>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="你的名字" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="你的邮箱" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="消息主题" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4" placeholder="你想对我说的话..." required></textarea>
+                            </div>
+                            <button type="submit" class="cute-btn">发送消息 🎀</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                我的个人网页
+            </div>
+          
+           
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // 初始化轮播
+            function initSlider() {
+                if (slides.length === 0) return;
+                
+                // 显示第一张幻灯片
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+                
+                // 设置自动轮播
+                startSlideShow();
+            }
+            
+            // 切换到指定幻灯片
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                currentSlide = (n + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // 下一张幻灯片
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            // 上一张幻灯片
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+            
+            // 开始自动轮播
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // 停止自动轮播
+            function pauseSlideShow() {
+                clearInterval(slideInterval);
+            }
+            
+            // 事件监听
+            nextBtn.addEventListener('click', function() {
+                pauseSlideShow();
+                nextSlide();
+                startSlideShow();
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                pauseSlideShow();
+                prevSlide();
+                startSlideShow();
+            });
+            
+            // 点击指示点切换
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    pauseSlideShow();
+                    goToSlide(index);
+                    startSlideShow();
+                });
+            });
+            
+            // 鼠标悬停暂停轮播
+            document.querySelector('.banner-container').addEventListener('mouseenter', pauseSlideShow);
+            document.querySelector('.banner-container').addEventListener('mouseleave', startSlideShow);
+            
+            // 触摸设备支持
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.querySelector('.banner-container').addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                pauseSlideShow();
+            }, false);
+            
+            document.querySelector('.banner-container').addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startSlideShow();
+            }, false);
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    nextSlide(); // 向左滑动，下一张
+                }
+                if (touchEndX > touchStartX + 50) {
+                    prevSlide(); // 向右滑动，上一张
+                }
+            }
+            
+            // 初始化轮播
+            initSlider();
+        });
+    </script>
+</body>
+</html>

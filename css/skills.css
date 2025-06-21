@@ -1,0 +1,176 @@
+   
+   .content-section {
+    background-color: #6bb1ef; /* 浅蓝色背景 */
+    padding: 60px 0;
+}
+
+
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.profile-wrapper {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+   /* 左侧个人信息栏 */
+    .profile-sidebar {
+        width: 250px;
+        padding: 30px;
+        border-right: 1px solid #e0e0e0;
+        background-color: #f9f9f9;
+    }
+    
+    .profile-avatar {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    .profile-title {
+        color: #666;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: center;
+    }
+    
+    .profile-info {
+        margin-bottom: 20px;
+    }
+    
+    .profile-info p {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    /* 右侧线性表结构 */
+    .profile-content {
+        flex: 1;
+        padding: 30px;
+    }
+    
+    .linear-list {
+        list-style-type: none;
+    }
+    
+    .list-item {
+        padding: 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .list-item:last-child {
+        border-bottom: none;
+    }
+    
+    .item-title {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 15px;
+    }
+    
+    .item-title:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 70%;
+        width: 4px;
+        background-color: #1b6aab;
+        border-radius: 2px;
+    }
+    
+    /* 教育背景 */
+    .education-item {
+        margin-bottom: 10px;
+    }
+    
+    .education-item h3 {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 5px;
+    }
+    
+    .education-item p {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-left: 15px;
+    }
+    
+    /* 技能列表 */
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-left: 15px;
+    }
+    
+    .skill-item {
+        background-color: #f0f0f0;
+        padding: 5px 12px;
+        border-radius: 3px;
+        font-size: 0.9rem;
+    }
+    
+    /* 兴趣爱好 */
+    .hobby-item {
+        margin-bottom: 15px;
+        padding-left: 15px;
+    }
+    
+    .hobby-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #444;
+    }
+    
+    .hobby-desc {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .profile-wrapper {
+            flex-direction: column;
+        }
+        
+        .profile-sidebar {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+        
+        .profile-content {
+            padding: 20px;
+        }
+    }

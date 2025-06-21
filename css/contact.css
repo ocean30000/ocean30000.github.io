@@ -1,0 +1,142 @@
+  #contact {
+    padding: 50px 0;
+    background-color: #6bb1ef; 
+}
+
+.profile-container {
+    display: flex;
+    gap: 30px;
+    max-width: 900px; /* 缩小整体宽度 */
+    margin: 0 auto;
+}
+
+/* 左侧联系信息 */
+.contact-info {
+    flex: 1;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-title {
+    font-size: 1.6rem;
+    color: #1b6aab;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-details {
+    padding: 0 15px;
+}
+
+.contact-item {
+    margin-bottom: 22px;
+}
+
+.item-label {
+    font-size: 1rem;
+    color: #1b6aab;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.item-content {
+    font-size: 0.95rem;
+    color: #666;
+    padding-left: 8px;
+    line-height: 1.5;
+}
+
+/* 右侧联系表单 */
+.contact-form-wrapper {
+    flex: 1;
+}
+
+.cute-form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.form-title {
+    font-size: 1.6rem;
+    color: #1b6aab;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #6bb1ef;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background-color: #6bb1ef;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1b6aab;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 107, 136, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccb7bf;
+}
+
+.cute-btn {
+    background-color: #1b6aab;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cute-btn:hover {
+    background-color: #1b6aab;
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        max-width: 500px;
+    }
+    
+    .contact-info, .cute-form {
+        padding: 20px;
+    }
+    
+    .contact-title, .form-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
